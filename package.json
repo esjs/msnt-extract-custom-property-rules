@@ -1,5 +1,5 @@
 {
-  "name": "postcss-extract-theme",
+  "name": "postcss-extract-custom-property-rules",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
