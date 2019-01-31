@@ -57,6 +57,10 @@ module.exports = postcss.plugin("postcss-reexport", function(options) {
   totalFiles = options.totalCount;
   
   return function(styles, result) {
+    if (
+      Array.isArray(options.excludeFiles) && options.excludeFiles.includes(styles.source.input.file)
+    ) return;
+
     styles.walkDecls(decl => {
       // we are only interested in rules that have custom properties
       if (!ruleWithCustomPropertyRegExtp.test(decl.value)) {
